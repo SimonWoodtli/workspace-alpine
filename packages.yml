@@ -97,7 +97,6 @@ apk:
   - py3-pip
   - openssh-client
   - openssl-dev
-  - libressl-dev
   - libffi-dev
   - go
   - gcompat
