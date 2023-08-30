@@ -81,7 +81,7 @@ apk:
   - pcsc-lite
   - pcre-tools
   - pcre2-tools
-  - ssh
+  - openssh
   - sshfs
   - rsync
   - alpine-sdk
