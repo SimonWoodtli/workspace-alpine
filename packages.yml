@@ -47,6 +47,7 @@ apk:
   - yq
   - dialog
   - kind
+  - skopeo
   - pup
   - streamlink
   - exercism
