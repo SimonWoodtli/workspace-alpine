@@ -1,8 +1,7 @@
 ## installed during CI build process:
 ## TODO 
-## * compile netdiscover, neo-matrix, ripgrep-all myself in seperate repo and copy it into
-## dockerfile. Or create and maintain them on alpine community myself
-## * install html5validator via pipx (make sure java8 is installed first)
+## * compile netdiscover, neo-matrix, ripgrep-all, rdrview myself in seperate repo and copy it into
+## dockerfile. Or try to get them into community repo of Alpine myself
 ## * install rustdesk via flatpak but not flathub but file from github
 ## * install act when it has podman support and alpine package
 apk:
@@ -51,7 +50,6 @@ apk:
   - pup
   - dust
   - neofetch
-  - rdrview
   - yt-dlp
   - delta
   - gocryptfs
