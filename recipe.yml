@@ -4,9 +4,11 @@ go:
   - github.com/raviqqe/muffet/v2@latest
   - github.com/exercism/cli/exercism@latest
   - github.com/charmbracelet/glow@latest
+## html5vali depends on java8
 pipx:
   - epy-reader
   - streamlink
+  - html5validator
 npm:
   - browser-sync
   - tldr
