@@ -5,12 +5,12 @@ set -uex pipefail
 apk update && apk upgrade
 
 apkPackages=( $(yq '.apk[]' < /tmp/packages.yml) )
-for apkPackage in $apkPackages; do
+for apkPackage in "${apkPackages[@]}"; do
   apk add --update --no-cache "$apkPackage"
 done
 
 cpanPackages=( $(yq '.cpan[]' < /tmp/packages.yml) )
-for cpanPackage in $cpanPackages; do
+for cpanPackage in "${cpanPackages[@]}"; do
    cpan -I "$cpanPackage"
 done
 
