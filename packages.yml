@@ -66,7 +66,6 @@ apk:
   - speedtest-cli
   - fd
   - ripgrep
-  - duf
   - ts
   - proxychains-ng
   - aria2
