@@ -2,6 +2,7 @@
 ## being installed with just and the workspace-alpine.sh install script
 go:
   - github.com/raviqqe/muffet/v2@latest
+  - github.com/exercism/cli/exercism@latest
 pipx:
   - epy-reader
   - streamlink
