@@ -1,0 +1,11 @@
+## Pkgs to be installed at the first time runnning the container. They're 
+## being installed with just and the workspace-alpine.sh install script
+go:
+  - github.com/raviqqe/muffet/v2@latest
+pipx:
+  - epy-reader
+npm:
+  - browser-sync
+  - tldr
+sdk:
+  - 8.0.302-open
