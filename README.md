@@ -4,21 +4,41 @@
 
 ## Installation
 
-1. install `just`
-2. get justfile: `curl -LJ ttps://raw.githubusercontent.com/SimonWoodtli/cloud-os/main/config/build/just/justfile -o $HOME/.justfile`
-3. run ..
+1. Install Dependencies:
+    1. docker or podman
+    1. distrobox
 
-This image is a customized workspace based on [redhats ubuntu
-toolbox][toolbox]. It includes all the tools I need for my
-terminal-centric workflow and gets updated and rebuild daily. This not
-only allows me to set up and maintain an up-to-date workspace, but it
-also helps me keep track of my personalized installation data. Moreover,
-a GitHub Action is set up to update packages and rebuild the image on a
-daily basis, ensuring that I have access to the latest features and
-enhancements. The ultimate goal of this setup is to provide a seamless
-and cloud-native UNIX terminal experience that can be used in
-conjunction with a dotfile manager for a zero-configuration, 'it just
-works' experience out of the box.
+2. Get my dotfiles:
+
+```
+mkdir -p $HOME/Repos/github.com/SimonWoodtli
+cd $HOME/Repos/github.com/SimonWoodtli
+git clone https://github.com/SimonWoodtli/dotfiles.git
+git clone https://github.com/SimonWoodtli/zet.git
+```
+
+3. Create Container:
+
+```
+distrobox create --image ghcr.io/simonwoodtli/workspace-alpine -n workspace -Y
+distrobox enter workspace
+```
+
+4. Setup Container: `just -f $HOME/Repos/github.com/SimonWoodtli/dotfiles/.justfile
+firstboot-workspace`
+
+## Description
+
+This image is a customized workspace based on the latest alpine version.
+It includes all the tools I need for my terminal-centric workflow and
+gets updated and rebuild daily. This not only allows me to set up and
+maintain an up-to-date workspace, but it also helps me keep track of my
+personalized installation data. Moreover, a GitHub Action is set up to
+update packages and rebuild the image on a daily basis, ensuring that I
+have access to the latest features and enhancements. The ultimate goal
+of this setup is to provide a seamless and cloud-native UNIX terminal
+experience that can be used in conjunction with a dotfile manager for a
+zero-configuration, 'it just works' experience out of the box.
 
 Not only can this image be used as a standalone on any machine that has
 docker/podman installed, but it also seamlessly integrates with [my
@@ -28,7 +48,6 @@ comprehensive experience.
 ![Alt](https://repobeats.axiom.co/api/embed/8669e2900a391e71c6dea82c54487e6a3034966b.svg "Repobeats analytics image")
 
 [cloud-os]: <https://github.com/simonwoodtli/cloud-os>
-[toolbox]: <https://quay.io/organization/toolbx-images>
 
 Related:
 
