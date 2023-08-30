@@ -4,13 +4,15 @@ set -uex pipefail
 
 apk update && apk upgrade
 
-declare -i apkCount=$(yq '.apk[]' < /tmp/packages.yml | wc -l)
-declare -a apkPackages=( $(yq '.apk[]' < /tmp/packages.yml) )
-apk add --update --no-cache ${aptPackages[@]}
+apkPackages=( $(yq '.apk[]' < /tmp/packages.yml) )
+for apkPackage in $apkPackages; do
+  apk add --update --no-cache "$apkPackage"
+done
 
-declare -i cpanCount=$(yq '.cpan[]' < /tmp/packages.yml | wc -l)
-declare -a cpanPackages=( $(yq '.cpan[]' < /tmp/packages.yml) )
-cpan -I ${cpanPackages[@]}
+cpanPackages=( $(yq '.cpan[]' < /tmp/packages.yml) )
+for cpanPackage in $cpanPackages; do
+   cpan -I "$cpanPackage"
+done
 
 curl -LJ https://github.com/storj/storj/releases/latest/download/uplink_linux_amd64.zip -o /tmp/uplink_linux_amd64.zip
 unzip /tmp/uplink_linux_amd64.zip -d /usr/local/bin/
