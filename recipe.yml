@@ -4,6 +4,7 @@ go:
   - github.com/raviqqe/muffet/v2@latest
 pipx:
   - epy-reader
+  - streamlink
 npm:
   - browser-sync
   - tldr

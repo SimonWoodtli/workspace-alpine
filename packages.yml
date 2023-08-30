@@ -49,7 +49,6 @@ apk:
   - kind
   - skopeo
   - pup
-  - streamlink
   - exercism
   - dust
   - neofetch
