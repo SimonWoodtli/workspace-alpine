@@ -89,6 +89,7 @@ apk:
   - coreutils
   - diffutils
   - nodejs
+  - npm
   - perl
   - perl-utils 
   - perl-dev 
