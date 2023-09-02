@@ -8,24 +8,27 @@
     1. docker or podman
     1. distrobox
 
-2. Get my dotfiles:
 
-```
-mkdir -p $HOME/Repos/github.com/SimonWoodtli
-cd $HOME/Repos/github.com/SimonWoodtli
-git clone https://github.com/SimonWoodtli/dotfiles.git
-git clone https://github.com/SimonWoodtli/zet.git
-```
-
-3. Create Container:
+2. Create Container:
 
 ```
 distrobox create --image ghcr.io/simonwoodtli/workspace-alpine -n workspace -Y
 distrobox enter workspace
 ```
 
-4. Setup Container: `just -f $HOME/Repos/github.com/SimonWoodtli/dotfiles/.justfile
-firstboot-workspace`
+3. Setup Dotfiles:
+
+```
+curl https://raw.githubusercontent.com/SimonWoodtli/dotfiles/main/scripts/__template-scripts/get-dotfiles.sh | bash
+chezmoi -S $HOME/Repos/github.com/SimonWoodtli/dotfiles init --apply
+exec bash -l
+```
+
+4. Setup Container: 
+
+```
+just -f $HOME/Repos/github.com/SimonWoodtli/dotfiles/.justfile firstboot-workspace
+```
 
 ## Description
 
