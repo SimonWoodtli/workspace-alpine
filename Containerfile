@@ -7,6 +7,10 @@ LABEL com.github.containers.toolbox="true" \
       SOURCE="https://github.com/SimonWoodtli/workspace"
 
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
+##Get binaries that are not on main/community repo in Alpine
+COPY --from=ghcr.io/simonwoodtli/neo:latest /bin/neo /usr/local/bin/neo
+COPY --from=ghcr.io/simonwoodtli/rdrview:latest /bin/rdrview /usr/local/bin/rdrview
+
 
 COPY build.sh /tmp/build.sh
 COPY post-install.sh /tmp/post-install.sh
