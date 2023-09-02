@@ -1,9 +1,10 @@
 ## installed during CI build process:
 ## TODO 
-## * compile netdiscover, neo-matrix, ripgrep-all, rdrview myself in seperate repo and copy it into
-## dockerfile. Or try to get them into community repo of Alpine myself
-## * install rustdesk via flatpak but not flathub but file from github
 ## * install act when it has podman support and alpine package
+## * install exercism via apk as soon as it gets into community repo, it's already in testing repo
+## * there are also a bunch of other packages in testing so keep an eye out
+## * install netdiscover via apk if someone actually gets it compiled with musl and maintains it on community repo
+## * or try to compile it with musl yourself from within a alpine container, although the maintainer do mention to use glibc so probably a time sinkhole not worth exploring :O
 apk:
   - bash
   - bash-completion

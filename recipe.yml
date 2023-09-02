@@ -12,6 +12,5 @@ pipx:
   - html5validator
 npm:
   - browser-sync
-  - tldr
 sdk:
   - 8.0.302-open
