@@ -2,7 +2,7 @@
 ## TODO 
 ## * install act when it has podman support and alpine package
 ## * install exercism via apk as soon as it gets into community repo, it's already in testing repo
-## * there are also a bunch of other packages in testing so keep an eye out
+## * there are also a bunch of other packages in testing so keep an eye out: dotool, rdrview, glow, duf, exercism, streamlink
 ## * install netdiscover via apk if someone actually gets it compiled with musl and maintains it on community repo
 ## * or try to compile it with musl yourself from within a alpine container, although the maintainer do mention to use glibc so probably a time sinkhole not worth exploring :O
 apk:
@@ -44,6 +44,7 @@ apk:
   - w3m
   - shellcheck
   - fzf
+  - fzf-tmux
   - yq
   - dialog
   - kind
@@ -76,6 +77,7 @@ apk:
   - calcurse
   - hyperfine
   - bat
+  - gnome-screenshot
   - weechat
   - net-tools
   - ca-certificates
