@@ -23,6 +23,7 @@ apk:
   - curl
   - wget
   - findutils
+  - parallel
   - gnupg
   - shadow
   - git
