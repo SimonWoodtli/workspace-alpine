@@ -104,7 +104,6 @@ apk:
   - openssh-client
   - openssl-dev
   - libffi-dev
-  - go
   - gcompat
   - musl-utils
   - musl-dev
