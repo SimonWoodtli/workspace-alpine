@@ -11,7 +11,11 @@ done
 curl -LJ https://github.com/storj/storj/releases/latest/download/uplink_linux_amd64.zip -o /tmp/uplink_linux_amd64.zip
 unzip /tmp/uplink_linux_amd64.zip -d /usr/local/bin/
 chmod 755 /usr/local/bin/uplink
-# make bash default shell for root and symlink to /usr
+## make bash default shell for root and symlink to /usr
 usermod --shell /bin/bash root
 ln -s /bin/bash /usr/bin/bash
 ln -s /bin/cat /usr/bin/cat
+##FIX: distrobox-host-exec runs with #!/usr/bin/sh but Alpine does not have a symlink
+if [ ! -x /usr/bin/sh ]; then
+	ln -sf "$(readlink -f /bin/sh)" /usr/bin/sh
+fi
