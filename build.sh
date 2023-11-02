@@ -19,3 +19,5 @@ ln -s /bin/cat /usr/bin/cat
 if [ ! -x /usr/bin/sh ]; then
 	ln -sf "$(readlink -f /bin/sh)" /usr/bin/sh
 fi
+##FIX: tmux bash completion (Alpine ships without it)
+curl -LJ https://src.fedoraproject.org/rpms/tmux/raw/rawhide/f/bash_completion_tmux.sh -o /usr/share/bash-completion/completions/tmux
