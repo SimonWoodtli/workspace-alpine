@@ -1,13 +1,14 @@
 # Container Workspace Environment for Development
 
 [![License](https://img.shields.io/badge/license-Apache2-brightgreen.svg)](LICENSE)
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/workspace-alpine)](https://artifacthub.io/packages/search?repo=workspace-alpine)
+[![wakatime](https://wakatime.com/badge/user/173067c8-7ded-4cfb-8605-b3032659c00c/project/7bdb4f29-ff86-416c-9bee-7251dfb846e0.svg)](https://wakatime.com/badge/user/173067c8-7ded-4cfb-8605-b3032659c00c/project/7bdb4f29-ff86-416c-9bee-7251dfb846e0)
 
 ## Installation
 
 1. Install Dependencies:
     1. docker or podman
     1. distrobox
-
 
 2. Create Container:
 
@@ -24,7 +25,7 @@ chezmoi -S $HOME/Repos/github.com/SimonWoodtli/dotfiles init --apply
 exec bash -l
 ```
 
-4. Setup Container: 
+4. Setup Container:
 
 ```
 just -f $HOME/Repos/github.com/SimonWoodtli/dotfiles/.justfile firstboot-workspace
