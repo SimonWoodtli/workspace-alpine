@@ -1,7 +1,7 @@
 ## installed during CI build process:
 ## TODO 
 ## * install act when it has podman support and alpine package
-## * install exercism via apk as soon as it gets into community repo, it's already in testing repo
+## * install exercism, swww, youtube-viewer via apk as soon as it gets into community repo, it's already in testing repo
 ## * there are also a bunch of other packages in testing so keep an eye out: dotool, rdrview, glow, duf, exercism, streamlink
 ## * install netdiscover via apk if someone actually gets it compiled with musl and maintains it on community repo
 ## * or try to compile it with musl yourself from within a alpine container, although the maintainer do mention to use glibc so probably a time sinkhole not worth exploring :O
@@ -24,9 +24,13 @@ apk:
   - wget
   - findutils
   - parallel
+  - strace
+  - progress
   - gnupg
   - shadow
   - git
+  - grep
+  - sed
   - iproute2
   - iputils
   - tcpdump
@@ -44,6 +48,7 @@ apk:
   - jq
   - w3m
   - shellcheck
+  - shfmt
   - fzf
   - fzf-tmux
   - yq
@@ -57,15 +62,17 @@ apk:
   - delta
   - gocryptfs
   - nmap
+  - nmap-scripts
   - htop
   - btop
+  - pv
   - xclip
   - ctags
   - just
   - imagemagick
+  - poppler-utils
   - wofi
   - pandoc-cli
-  - asciinema
   - speedtest-cli
   - fd
   - ripgrep
@@ -85,10 +92,13 @@ apk:
   - pcsc-lite
   - pcre-tools
   - pcre2-tools
+  - libseccomp-dev
+  - libxml2-dev
   - openssh
   - sshfs
   - rsync
   - alpine-sdk
+  - autoconf
   - abuild
   - coreutils
   - diffutils
@@ -96,8 +106,8 @@ apk:
   - nodejs
   - npm
   - perl
-  - perl-utils 
-  - perl-dev 
+  - perl-utils
+  - perl-dev
   - ncurses-dev
   - python3
   - python3-dev
@@ -117,8 +127,6 @@ apk:
   - feh
   - newsboat
   - urlscan
-  - mpd
-  - ncmpcpp
 cpan:
   - Curses
   - Term::Animation

@@ -1,16 +1,25 @@
 ## Pkgs to be installed at the first time runnning the container. They're 
 ## being installed with just and the workspace-alpine.sh install script
+## asciinema from alpine doesn't work in a container => pipx does
 go:
   - github.com/raviqqe/muffet/v2@latest
   - github.com/charmbracelet/glow@latest
   - github.com/muesli/duf@latest
   - github.com/exercism/cli/exercism@latest
-## html5vali depends on java8
 pipx:
+  - asciinema
   - epy-reader
   - streamlink
-  - html5validator
+  - howdoi
+  - pylint
+  - mypy
+  - flake8
+  - virtualenv
 npm:
   - browser-sync
+  - eslint
+  - prettier
+  - stylelint
+  - stylelint-config-standard
 sdk:
   - 8.0.302-open
