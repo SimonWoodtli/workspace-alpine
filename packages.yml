@@ -124,6 +124,7 @@ apk:
   - abook
   - notmuch
   - urlview
+  - chafa
   - feh
   - newsboat
   - urlscan
