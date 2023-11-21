@@ -1,6 +1,18 @@
-## Pkgs to be installed at the first time runnning the container. They're 
+## Pkgs to be installed at the first time runnning the container. They're
 ## being installed with just and the workspace-alpine.sh install script
 ## asciinema from alpine doesn't work in a container => pipx does
+## TODO Install linters via asdf
+## Python: pylint mypy flake8 virtualenv
+## webdev: eslint prettier stylelint stylelint-config-standard
+## TODO rm sdk as soon as asdf is all setup
+## TODO add all other tools to asdf
+## TODO test if other hugo plugin can do latest and still give extended
+## FIXME if asdf is installed from within Alpine Linux, you cannot
+## install nodejs cause they are compiled with glibc not musl. Gotta try
+## to get this done from the host
+##FIX to no get musl/glibc issue with running nodejs via asdf on Alpine
+# edit: /var/home/xnasero/.asdf/shims/{node,npm,npx}
+# exec distrobox-host-exec /home/xnasero/.asdf/bin/asdf exec "node" "$@"
 go:
   - github.com/raviqqe/muffet/v2@latest
   - github.com/charmbracelet/glow@latest
@@ -11,15 +23,24 @@ pipx:
   - epy-reader
   - streamlink
   - howdoi
-  - pylint
-  - mypy
-  - flake8
-  - virtualenv
 npm:
   - browser-sync
-  - eslint
-  - prettier
-  - stylelint
-  - stylelint-config-standard
 sdk:
   - 8.0.302-open
+asdf:
+  - tools:
+      name: nodejs
+      url: https://github.com/asdf-vm/asdf-nodejs.git
+      ver:
+        - latest
+        - 20.9.0
+  - tools:
+      name: golang
+      url: https://github.com/asdf-community/asdf-golang.git
+      ver:
+        - latest
+  - tools:
+      name: gohugo
+      url: https://github.com/nklmilojevic/asdf-hugo.git
+      ver:
+        - extended_0.120.3
