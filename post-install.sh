@@ -13,6 +13,7 @@ ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/playerctl
 ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/dbus-send
 ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/gsettings
 ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/xdg-open
+#ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/systemctl #Don't use that no tab completion
 ##TODO currently rust client tldr `tealdeer` not on Alpine but Fedora install on Alpine when available
 ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/tldr
 ##TODO remove `tidy` from cloud-os if alpine package becomes available
