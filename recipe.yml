@@ -1,18 +1,18 @@
-## Pkgs to be installed at the first time runnning the container. They're
-## being installed with just and the workspace-alpine.sh install script
-## asciinema from alpine doesn't work in a container => pipx does
+##* Pkgs to be installed at the first time runnning the container. They're
+##  being installed with just and the workspace-alpine.sh install script
+##* asciinema from alpine doesn't work in a container => pipx does
+
 ## TODO Install linters via asdf
 ## Python: pylint mypy flake8 virtualenv
 ## webdev: eslint prettier stylelint stylelint-config-standard
-## TODO rm sdk as soon as asdf is all setup
+
+## TODO If you ever need/care about Java. Research asdf java vs sdkman java
+#and decide if it's worth to keep sdkman. Uninstalling it now and using
+#asdf is too much work for I really don't care about it. But it'd be
+#neat to have only one version manager. (from a short glimpse it seems
+#that sdkman does not offer musl versions but asdf does, so ++ for asdf)
+
 ## TODO add all other tools to asdf
-## TODO test if other hugo plugin can do latest and still give extended
-## FIXME if asdf is installed from within Alpine Linux, you cannot
-## install nodejs cause they are compiled with glibc not musl. Gotta try
-## to get this done from the host
-##FIX to no get musl/glibc issue with running nodejs via asdf on Alpine
-# edit: /var/home/xnasero/.asdf/shims/{node,npm,npx}
-# exec distrobox-host-exec /home/xnasero/.asdf/bin/asdf exec "node" "$@"
 go:
   - github.com/raviqqe/muffet/v2@latest
   - github.com/charmbracelet/glow@latest
@@ -23,17 +23,13 @@ pipx:
   - epy-reader
   - streamlink
   - howdoi
+  - vosk
 npm:
   - browser-sync
 sdk:
   - 8.0.302-open
 asdf:
-  - tools:
-      name: nodejs
-      url: https://github.com/asdf-vm/asdf-nodejs.git
-      ver:
-        - latest
-        - 20.9.0
+  #nodejs needs to be build from scratch with Alpine cause of musl, see zet
   - tools:
       name: golang
       url: https://github.com/asdf-community/asdf-golang.git

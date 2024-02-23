@@ -45,6 +45,7 @@ apk:
   - util-linux
   - alpine-base
   - github-cli
+  - pass
   - jq
   - w3m
   - shellcheck
@@ -56,6 +57,7 @@ apk:
   - kind
   - skopeo
   - pup
+  - recode
   - dust
   - neofetch
   - yt-dlp
@@ -70,6 +72,7 @@ apk:
   - ctags
   - just
   - imagemagick
+  - mediainfo
   - poppler-utils
   - wofi
   - pandoc-cli
@@ -77,6 +80,7 @@ apk:
   - fd
   - ripgrep
   - ts
+  - xxd
   - proxychains-ng
   - aria2
   - macchanger
@@ -88,6 +92,7 @@ apk:
   - gnome-screenshot
   - weechat
   - net-tools
+  - nss
   - ca-certificates
   - pcsc-lite
   - pcre-tools
@@ -111,6 +116,7 @@ apk:
   - ncurses-dev
   - python3
   - python3-dev
+  - py3-qrcode
   - py3-pip
   - openssh-client
   - openssl-dev
@@ -118,6 +124,8 @@ apk:
   - gcompat
   - musl-utils
   - musl-dev
+  - gettext
+  - gettext-envsubst
   - msmtp
   - neomutt
   - isync
@@ -125,6 +133,8 @@ apk:
   - notmuch
   - urlview
   - chafa
+  - libsixel
+  - libsixel-tools
   - feh
   - newsboat
   - urlscan
