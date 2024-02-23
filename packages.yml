@@ -54,7 +54,6 @@ apk:
   - fzf-tmux
   - yq
   - dialog
-  - kind
   - skopeo
   - pup
   - recode
