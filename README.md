@@ -49,9 +49,36 @@ docker/podman installed, but it also seamlessly integrates with [my
 cloud-native desktop][cloud-os] setup, providing an even more
 comprehensive experience.
 
+## Upgrade Container
+
+> 🧐 To just upgrade your containers packages: `distrobox upgrade --all`
+
+1. Open a host terminal
+* Method 1: (recommended) To upgrade to the latest major Alpine version or simply get a fresh container:
+
+```
+distrobox stop workspace
+distrobox rm workspace
+podman system prune --all
+distrobox create --image ghcr.io/simonwoodtli/workspace-alpine -n workspace -Y
+```
+
+* Method 2: (not recommended) To upgrade to the latest major Alpine version
+  manually. Update the repo to the latest version [see wiki][wiki]
+
+> 🧐 Upgrading shouldn't cause any hiccups. Because all your config files in
+> your \$HOME are actually a mounted volume to the host.
+>
+> However if you installed programs manually or build stuff from source as
+> system-wide installs then does programs won't survive an upgrade. It's best
+> to include installs in packages.yml or recipe.yml if packages are
+> available. Or directly build it from source within build.sh (e.g.
+> mutt-wizard). That way you can have a smooth upgrade experience.
+
 ![Alt](https://repobeats.axiom.co/api/embed/8669e2900a391e71c6dea82c54487e6a3034966b.svg "Repobeats analytics image")
 
 [cloud-os]: <https://github.com/simonwoodtli/cloud-os>
+[wiki]: <https://wiki.alpinelinux.org/wiki/Upgrading_Alpine>
 
 Related:
 
