@@ -13,10 +13,8 @@ ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/playerctl
 ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/dbus-send
 ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/gsettings
 ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/xdg-open
-#ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/systemctl #Don't use that no tab completion
-##TODO currently rust client tldr `tealdeer` not on Alpine but Fedora install on Alpine when available
-ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/tldr
-##TODO remove `tidy` from cloud-os if alpine package becomes available
-ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/tidy
-##neo matrix won't work cause Alpine using musl, get it from Host
-ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/neo
+ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/systemctl
+ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/tldr #TODO rm rust client tldr 'tealdeer' from host as soon as alpine version exists
+ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/tidy #TODO rm tidy from host as soon as alpine version exists
+ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/neo #neo matrix won't work cause Alpine using musl, get it from Host
+ln -sf /usr/bin/distrobox-host-exec /usr/local/bin/exercism #TODO rm exercism from host as soon as alpine version exists. (golang self compiled fails)
