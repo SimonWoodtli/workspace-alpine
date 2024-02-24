@@ -17,12 +17,10 @@ go:
   - github.com/raviqqe/muffet/v2@latest
   - github.com/charmbracelet/glow@latest
   - github.com/muesli/duf@latest
-  - github.com/exercism/cli/exercism@latest
 pipx:
   - asciinema
   - epy-reader
   - streamlink
-  - howdoi
   - vosk
 npm:
   - browser-sync
